@@ -1,0 +1,28 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload Genomic File</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </head>
+  <body>
+    <form
+      action="http://127.0.0.1:5000/upload"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="file" />
+      <input
+        type="text"
+        name="unique_id"
+        placeholder="Enter unique ID if you have already uploaded a file"
+      />
+      <input type="submit" value="Upload" />
+    </form>
+  </body>
+</html>

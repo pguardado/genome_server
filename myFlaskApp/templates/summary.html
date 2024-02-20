@@ -1,0 +1,35 @@
+<!-- templates/summary.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Summary</title>
+  </head>
+  <body>
+    <h1>Summary</h1>
+
+    <!-- Display the successful upload message -->
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+
+    <!-- Display the unique identifier -->
+    <p>Your unique identifier for this upload is: {{ unique_identifier }}</p>
+
+    <p>Number of chromosomes: {{ num_chromosomes }}</p>
+    <form action="{{ url_for('analysis') }}" method="get">
+      <input type="hidden" name="unique_id" value="{{ unique_identifier }}" />
+      <input type="submit" value="Analyze Data" />
+    </form>
+    <a href="{{ url_for('analysis', unique_id=unique_id) }}"
+      >Go to analysis page</a
+    >
+    <h2>Chromosome Lengths</h2>
+    <ul>
+      {% for id, length in chromosome_lengths.items() %}
+      <li>{{ id }}: {{ length }}</li>
+      {% endfor %}
+    </ul>
+
+    <!-- Add a button to navigate to the analysis page, passing the unique identifier as a parameter -->
+  </body>
+</html>

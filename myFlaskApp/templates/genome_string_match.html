@@ -1,0 +1,30 @@
+<!-- genome_string_match.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Genome String Match</title>
+  </head>
+  <body>
+    <h1>Genome String Match</h1>
+    <form
+      method="POST"
+      action="{{ url_for('genome_string_match', unique_id=request.args.get('unique_id')) }}"
+    >
+      <label for="query_sequence">Enter Query Sequence:</label><br />
+      <input
+        type="text"
+        id="query_sequence"
+        name="query_sequence"
+        required
+      /><br />
+      <label for="accession_number">Enter Accession Number:</label><br />
+      <input
+        type="text"
+        id="accession_number"
+        name="accession_number"
+        required
+      /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genome Analysis</title>
+    <!-- Add your CSS files here -->
+    <!-- <link rel="stylesheet" href="/static/style.css"> -->
+  </head>
+  <body>
+    <!-- Add action attribute to form tag -->
+    <form id="your-form-id" method="POST" action="/analysis">
+      <label for="unique_id">Unique ID:</label>
+      <input type="text" id="unique_id" name="unique_id" />
+
+      <input
+        type="radio"
+        id="genome_summary"
+        name="analysis_type"
+        value="genome_summary"
+      />
+      <label for="genome_summary">Genome Summary</label>
+
+      <input
+        type="radio"
+        id="genome_region"
+        name="analysis_type"
+        value="genome_region"
+      />
+      <label for="genome_region">Genome Region</label>
+
+      <input
+        type="radio"
+        id="genome_string_match"
+        name="analysis_type"
+        value="genome_string_match"
+      />
+      <label for="genome_string_match">Genome String Match</label>
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
